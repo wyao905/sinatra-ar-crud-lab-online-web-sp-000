@@ -1,4 +1,5 @@
 require_relative '../../config/environment'
+require 'pry'
 
 class ApplicationController < Sinatra::Base
 
@@ -23,6 +24,7 @@ class ApplicationController < Sinatra::Base
   
   get '/articles' do
     @articles = Article.all
+    binding.pry
     
     erb :index
   end
